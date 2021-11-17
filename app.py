@@ -150,7 +150,7 @@ def event_handle(event):
     if msgType == "text":
         msg = str(event["message"]["text"])
         if msg == "สวัสดี":
-           replyObreplyObjj = TextSendMessage(text="จ้า ดีจ้า")
+           replyObreplyObjj = TextSendMessage(text="จ้า ดีด้วยจ้า")
         elif msg == "กินข้าวกันไหม":      
            replyObreplyObjj = TextSendMessage(text=msg)
         line_bot_api.reply_message(rtoken, replyObj)

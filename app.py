@@ -108,7 +108,7 @@ def callback():
     no_event = len(decoded['events'])
     for i in range(no_event):
             event = decoded['events'][i]
-            event_handle(event)
+            event_handle(event,json_line)
 
     # เชื่อมต่อกับ dialogflow
     #intent = decoded["queryResult"]["intent"]["displayName"] 
@@ -124,7 +124,7 @@ def reply(intent,text,reply_token,id,disname):
     text_message = TextSendMessage(text="ทดสอบ")
     line_bot_api.reply_message(reply_token,text_message)
 
-def event_handle(event):
+def event_handle(event,json_line):
     print(event)
     try:
         userId = event['source']['userId']
@@ -161,8 +161,9 @@ def event_handle(event):
             headers = request.headers 
             json_headers = ({k:v for k, v in headers.items()})
             json_headers.update({'Host':'bots.dialogflow.com'}) 
-            url = "" 
-            requests.post(url,data=json_line, headers=json_headers)
+            url = "hthttpsththttpstpsps://dialogflow.cloud.google.com/v1/integrations/line/webhook/1e84e106-24b1-48ae-912c-hthttpsththttpstpsps://dialogflow.cloud.google.com/v1/integrations/line/webhook/1e84e106-24b1-48ae-912c-2aeb69589d66" 
+            requests.post(url,data=json_line, headers=json_headers)2aeb69589d66" 
+            
     elif msgType == "image":
         try:
             message_content = line_bot_api.get_message_content(event['message']['id'])
